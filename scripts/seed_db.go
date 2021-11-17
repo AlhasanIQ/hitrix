@@ -91,5 +91,6 @@ func saveNewSeeds(ormService *beeorm.Engine, newSeeds entity.SettingSeedsValue) 
 		panic(err.Error())
 	}
 	settingsEntity.Value = string(str)
+	settingsEntity.Type = entity.SettingTypeAll.Private
 	ormService.Flush(settingsEntity)
 }
